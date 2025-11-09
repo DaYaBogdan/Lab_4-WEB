@@ -41,7 +41,7 @@ function prepareBigImage() {
   let indexImg;
   // Бэк + имг запилил
   bigImgBack = document.createElement("div");
-  bigImgBack.classList.add("bigImgBack");
+  bigImgBack.classList.add("background");
   document.body.appendChild(bigImgBack);
 
   bigImg = document.createElement("img");
@@ -70,7 +70,7 @@ function prepareBigImage() {
   buttonClose.textContent = "x";
 
   // Всё это спрятал
-  $(".bigImgBack").hide();
+  $(".background").hide();
 
   let coolAndPerfectLength = $(".image-row img").length - 1;
 

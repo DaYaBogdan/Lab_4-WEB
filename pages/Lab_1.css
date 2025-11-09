@@ -299,7 +299,7 @@ ul {
   background-color: #311631;
 }
 
-.bigImgBack {
+.background {
   position: fixed;
   top: 0%;
   left: 0%;
@@ -312,7 +312,7 @@ ul {
   z-index: 1;
 }
 
-.bigImgBack img {
+.background img {
   height: 800px;
   width: 500px;
   border-radius: 8px;
@@ -356,4 +356,14 @@ ul {
   margin: auto;
   background-color: rgb(219, 211, 211);
   z-index: 1;
+}
+
+.dialog-window {
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  top: 22%;
+  left: 38%;
+  background-color: #2a0541;
+  z-index: 2;
 }
