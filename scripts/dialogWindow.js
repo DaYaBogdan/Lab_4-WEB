@@ -1,5 +1,8 @@
 $(document).ready(function dialogWindow() {
-  dialogWindowCreate();
+  const dialogWindow = dialogWindowCreate();
+  $("#reset").click(function (event) {
+    $(dialogWindow).show();
+  });
 });
 
 function dialogWindowCreate() {
@@ -11,11 +14,45 @@ function dialogWindowCreate() {
   const window = document.createElement("div");
   window.classList.add("dialog-window");
 
-  const text = document.createElement("h2");
-  text.style = "text-align: center";
+  const text = document.createElement("h1");
+  text.style = "text-align: center; color: white; margin: 40px 20px ";
   text.textContent = "Вы подтверждаете свой выбор?";
 
+  const buttonBlock = document.createElement("div");
+  const button_yes = document.createElement("button");
+  const button_no = document.createElement("button");
+  buttonBlock.classList.add("buttons");
+  buttonBlock.style = "top: 60%; left: 24%";
+  button_yes.style = "background-color: green";
+  button_no.style = "background-color: red";
+  button_yes.id = "continue button";
+  button_no.id = "cancel button";
+
+  const text_button_yes = document.createElement("h2");
+  const text_button_no = document.createElement("h2");
+  text_button_no.textContent = "No";
+  text_button_yes.textContent = "Yes";
+  text_button_no.style = "margin: 0";
+  text_button_yes.style = "margin: 0";
+
+  button_yes.appendChild(text_button_yes);
+  button_no.appendChild(text_button_no);
+  buttonBlock.appendChild(button_yes);
+  buttonBlock.appendChild(button_no);
+  window.appendChild(buttonBlock);
   window.appendChild(text);
   back.appendChild(window);
-  //   $(back).hide();
+
+  $(back).hide();
+
+  $(text_button_yes).click(function () {
+    $("form").trigger("reset");
+    $(back).hide();
+  });
+
+  $(text_button_no).click(function (event) {
+    $(back).hide();
+  });
+
+  return back;
 }

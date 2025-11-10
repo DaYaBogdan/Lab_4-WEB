@@ -16,13 +16,13 @@ function errorElement(element) {
   );
 }
 
-function prepareForm() {
+$(document).ready(function prepareForm() {
   const secondAnswer = document.getElementById("secondAnswer");
 
-  if (!check(secondAnswer.value, integerPattern)) {
-    errorElement(secondAnswer);
-    return;
-  }
-
-  document.getElementById("testForm").requestSubmit();
-}
+  $("form").submit(function (event) {
+    if (!check(secondAnswer.value, integerPattern)) {
+      errorElement(secondAnswer);
+      event.preventDefault();
+    }
+  });
+});

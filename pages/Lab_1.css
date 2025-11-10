@@ -361,9 +361,10 @@ ul {
 .dialog-window {
   position: absolute;
   width: 600px;
-  height: 500px;
-  top: 22%;
+  height: 300px;
+  top: 30%;
   left: 38%;
+  border: 3px dashed #9a8d1b;
   background-color: #2a0541;
   z-index: 2;
 }
