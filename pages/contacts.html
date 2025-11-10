@@ -5,7 +5,7 @@
     <title>contacts</title>
     <meta charset="utf-8" />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="../scripts/dialogWindow.js"></script>
+    <script src="../scripts/dialogWindow.js" defer></script>
     <script src="../scripts/contacts.js"></script>
     <script src="../scripts/menu.js"></script>
     <script src="../scripts/popover.js"></script>
@@ -26,31 +26,31 @@
       <fieldset>
         <legend><h1>Введите Контактные данные:</h1></legend>
 
-        <table>
-          <tr>
-            <td>
-              <label><h2>Введите ФИО:</h2></label>
-            </td>
-            <td colspan="2">
-              <label><h2>Выберите пол:</h2></label>
-            </td>
-            <td>
-              <label><h2>Выберите Возраст:</h2></label>
-            </td>
-            <td>
-              <label><h2>Ваш email:</h2></label>
-            </td>
-            <td>
-              <label><h2>Ваш комментарий:</h2></label>
-            </td>
-            <td colspan="2">
-              <label><h2>Ваш телефон:</h2></label>
-            </td>
-          </tr>
+        <form action="mailto:bogsm228@gmail.com" id="contactForm" method="post" enctype="multipart/form-data">
+          <table>
+            <tr>
+              <td>
+                <label><h2>Введите ФИО:</h2></label>
+              </td>
+              <td colspan="2">
+                <label><h2>Выберите пол:</h2></label>
+              </td>
+              <td>
+                <label><h2>Выберите Возраст:</h2></label>
+              </td>
+              <td>
+                <label><h2>Ваш email:</h2></label>
+              </td>
+              <td>
+                <label><h2>Ваш комментарий:</h2></label>
+              </td>
+              <td colspan="2">
+                <label><h2>Ваш телефон:</h2></label>
+              </td>
+            </tr>
 
-          <tr>
-            <div>
-              <form action="mailto:bogsm228@gmail.com" method="post" enctype="text/plain" id="contactForm">
+            <tr>
+              <div>
                 <tr>
                   <td>
                     <input class="text" type="text" id="FIO" name="FIO" value="" placeholder="Smirnov B.V." />
@@ -111,13 +111,13 @@
                     <button type="button" onclick="prepareForm()">Отправить</button>
                   </td>
                   <td>
-                    <button type="reset" value="Reset">Сбросить</button>
+                    <button type="reset" id="reset">Сбросить</button>
                   </td>
                 </tr>
-              </form>
-            </div>
-          </tr>
-        </table>
+              </div>
+            </tr>
+          </table>
+        </form>
       </fieldset>
     </div>
 
